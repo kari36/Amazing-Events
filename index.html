@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="shortcut icon" href="./assets/favicon-16x16.png" type="image/x-icon">
     <title>Amazing Events/Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-    </head>
+</head>
 <body>
-    <header class="w-100 bg-v">
-        <nav class="container navbar navbar-expand-lg ">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand col-md-7 d-flex" href="">
-                    <img src="./assets/Logo_Amazing_Events.png" alt="Logo">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/Logo_Amazing_Events.png" alt="Logo" width="200">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link " aria-current="page" href="#">Home</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./upcoming.html">Upcoming Events</a>
@@ -34,7 +32,8 @@
                             <a class="nav-link" href="./past.html">Past Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./contact.html">Contact</a>
+                            <a class="nav-link"
+                            href="./contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./stats.html">Stats</a>
@@ -44,70 +43,30 @@
             </div>
         </nav>
     </header>
-    <main class="" @animationstart="addFade($event)" @animationend="removeFade($event)">
-        <div class="w-100 carrousel-container">
-            <div class="d-flex flex-row container justify-content-between align-items-center carrousel px-2">
-                <div>
-                    <a href="./stats.html">
-                        <i class="bi bi-caret-left-fill"></i>
-                    </a>
-                </div>
-                <div class="h1">
-                    <h1>Home</h1>
-                </div>
-                <div>
-                    <a href="./upcoming-events.html">
-                        <i class="bi bi-caret-right-fill"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="d-flex flex-column align-items-center justify-content-center gap-4">
-                <form action="" method="get"
-                    class="d-flex flex-column flex-md-row-reverse w-100 justify-content-md-between align-items-center card-form">
-                    <div class="d-flex my-2 search" role="search">
-                        <input class="form-control mx-2" v-model="search" id="searchInput" type="search"
-                            placeholder="Search Events" aria-label="Search">
-                    </div>
-                    <div class="d-flex flex-row justify-content-around flex-wrap gap-2 gap-sm-1" id="categoryContainer">
-                        <div class="categories" v-for="category in categories">
-                            <input v-model="selectedCheckboxs" type="checkbox" :value="category" :id="category">
-                            <label class="label" @click="selectedLabel($event)" :for="category">
-                                {{category}}
-                            </label>
-                        </div>
-                        {{completedFilter}}
-                    </div>
-                </form>
-                <div class="d-flex justify-content-center justify-content-lg-center flex-column gap-4 flex-sm-row flex-wrap"
-                    id="indexCardContainer">
-                    <div v-for="event in events" class="card">
-                        <img :src="event.image" class="card-img-top" alt="...">
-                        <span :class="'card-date ' + (new 
-                        <div class="card-body">
-                            <div class="card-header">
-                                <p>{{event.category}}</p>
-                                <h5>{{event.name}}</h5>
-                            </div>
-                            <div class="paragraph">
-                                <p class="card-text">{{event.description}}</p>
-                            </div>
-                            <div class="d-flex justify-content-between mt-2 align-items-center paragraph">
-                                <p class="price">{{moneyFormat.format(event.price)}}</p>
-                                <a :href="'./detail.html?id='+event._id" class="">
-                                    <span class="link"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    </div>
+    <main class="container bg-danger-subtle">
+        <div class="row">
+            <div class="card">
+                <img src="./assets/Costume_Party.jpg" class="card-img-top" alt="img party">
+                <div class="card-body">
+                    <h5 class="card-title">Partys</h5>
+                    <p class="card-text">date
+                    description
+                    category
+                    place
+                    capacity
+                    assistance or estimate.</p>
+                    <a href="#" class="btn btn-primary">See more..</a>
                 </div>
             </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+    <footer class="container bg-danger">
+        <p>Cohort</p>
+
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </body>
+</html>
