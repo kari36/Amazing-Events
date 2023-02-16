@@ -1,4 +1,8 @@
 
 .card{
-    style: "width: 18rem";
+    width: 18rem;
+
+}
+#contenedor-cards{
+   min-height: 80vh;
 }
