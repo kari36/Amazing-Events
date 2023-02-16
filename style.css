@@ -1,8 +1,17 @@
 
-.card{
-    width: 18rem;
 
+main{
+
+    min-height: 90vh!important;
 }
 #contenedor-cards{
-   min-height: 80vh;
+   min-height: 90vh;
+   justify-content:space-between;
+   align-items: center;
+}
+.card {
+    width: 16rem;
+}
+.card-img-top{
+    height: 10rem;
 }

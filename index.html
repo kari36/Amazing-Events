@@ -44,9 +44,30 @@
                 </div>
             </div>
         </nav>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/animated-svg-image-slider-featured.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/animated-svg-image-slider-featured.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/animated-svg-image-slider-featured.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </header>
     <main class="container bg-danger-subtle">
-        <div id="contenedor-cards" class="p-3 d-flex flex-wrap justify-content-center">
+        <div id="contenedor-cards" class="p-3 d-flex flex-wrap">
             <div class="card">
                 <img src="./assets/Costume_Party.jpg" class="card-img-top" alt="img party">
                 <div class="card-body">
@@ -101,7 +122,7 @@
             </div>
         </div>
     </main>
-    <footer class="container bg-danger">
+    <footer class="d-flex bg-danger text-white">
         <p>Cohort</p>
 
     </footer>
