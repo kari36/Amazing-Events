@@ -15,3 +15,16 @@ main{
 .card-img-top{
     height: 10rem;
 }
+footer{
+    min-height: 10vh;
+    align-items: center;
+}
+.social{
+    padding: 5px;
+    padding-left: 10px;
+    
+}
+.social img{
+    width: 30px;
+    
+}
