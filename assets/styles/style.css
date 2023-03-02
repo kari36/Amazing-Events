@@ -28,3 +28,7 @@ footer{
     width: 30px;
     
 }
+.card-price{
+    display: flex;
+    justify-content: space-between;
+}
