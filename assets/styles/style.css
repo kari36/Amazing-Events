@@ -32,3 +32,31 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+.banner{
+    min-height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.flecha lat-izq col-4{
+    display: flex;
+    justify-content: center;
+   
+}
+.flecha lat-der col-4{
+    display: flex;
+    justify-content: center;
+}
+.seccion{
+    display: flex;
+    justify-content: center;
+}
+#flecha_izq{
+    width: 100px;
+}
+#flecha_der{
+    width: 100px;
+    display: flex;
+    justify-items: right;
+    
+}
