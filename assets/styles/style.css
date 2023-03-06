@@ -53,10 +53,10 @@ footer{
 }
 #flecha_izq{
     width: 100px;
+    float: left;
 }
 #flecha_der{
     width: 100px;
-    display: flex;
-    justify-items: right;
+    float: right;
     
 }
