@@ -1,31 +1,25 @@
-let cards = data.events
+/*let imprimirCategorias = */
+let categorias = data.events.map((evento) => evento.category)
 
-const contenedorTarjetas = document.querySelector("#contenedor-cards")
+console.log(categorias);
 
-let targetasGeneradas = crearTarjetas(cards)
+let categoriasNoRepetidas = new Set(categorias)
+console.log(categoriasNoRepetidas)
+let arrayCategorias = [...categoriasNoRepetidas]
+console.log(arrayCategorias);
 
-contenedorTarjetas.innerHTML = targetasGeneradas
+let contenedorCategorias = document.querySelector(".contenedorCheck")
 
-function crearTarjetas(cards) {
-    let tarjetas = ''
-    console.log(contenedorTarjetas)
+function imprimirCategorias(arrayCategorias) {
+    let templateCategorias = ''
 
-
-
-
-    for (const card of cards) {
-        tarjetas += `<div class="card">
-                <img src="${card.image}" class="card-img-top" alt="img party">
-                <div class="card-body">
-                    <h5 class="card-title">${card.name}</h5>
-                    <p class="card-text">${card.description}
-                    </p>
-                    <div class="card-price"> <p>$${card.price}</p>
-                    <a href="#" class="btn btn-primary">See more..</a>
-                    </div>
-                </div>
-            </div>`
-
-    }
-    return tarjetas
+    arrayCategorias.forEach(categoria => {
+        templateCategorias += `<input class="form-check-input" type="checkbox" value=${categoria} id="flexCheckChecked" >
+            <label class="form-check-label" for="flexCheckChecked">
+                ${categoria}
+            </label>`
+    });
+    contenedorCategorias.innerHTML = templateCategorias
 }
+
+imprimirCategorias(arrayCategorias)
