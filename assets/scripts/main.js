@@ -24,7 +24,7 @@ function crearTarjetas(cards) {
                     <p class="card-text">${card.description}
                     </p>
                     <div class="card-price"> <p>$${card.price}</p>
-                    <a href="#" class="btn btn-primary">See more..</a>
+                    <a href="/details.html?id=${card._id}" class="btn btn-primary">See more..</a>
                     </div>
                 </div>
             </div>`
