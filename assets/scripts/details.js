@@ -16,10 +16,10 @@ let id = params.get("id")
 let cardDetail = cards.find(event => event._id == id)
 console.log(cardDetail)
 
-const container = document.querySelector("#contenedor-cards")
+const container = document.querySelector("#contenedor-cards-details")
 
 let templateCardDetail = " "
-templateCardDetail += `<div class="card">
+templateCardDetail += `<div class="cardDetail">
                 <img src="${cardDetail.image}" class="card-img-top" alt="img party">
                 <div class="card-body">
                     <h5 class="card-title">${cardDetail.name}</h5>
