@@ -1,23 +1,38 @@
-/*let cards = data.events
+const cards = data.events
 
-document.getElementsById("#contenedorDetails").onclick = function mostrarDetails() {
-    
-}*/
+console.log(cards);
 
-let cards = data.events
+let queryString = location.search
+console.log(queryString)
 
-const contenedorTarjetas = document.querySelector("#contenedor-cards")
+console.log(location);
 
-let targetasGeneradas = crearTarjetas(cards)
+let params = new URLSearchParams(queryString)
+console.log(params);
 
-contenedorTarjetas.innerHTML = targetasGeneradas
+let id = params.get("id")
+/*console.log(typeof id);*/
 
-function crearTarjetas(cards) {
-    let tarjetas = ''
-    console.log(contenedorTarjetas)
+let cardDetail = cards.find(event => event._id == id)
+console.log(cardDetail)
 
+const container = document.querySelector("#contenedor-cards")
 
+let templateCardDetail = " "
+templateCardDetail += `<div class="card">
+                <img src="${cardDetail.image}" class="card-img-top" alt="img party">
+                <div class="card-body">
+                    <h5 class="card-title">${cardDetail.name}</h5>
+                    <p class="card-text">${cardDetail.description}
+                    </p>
+                    <div class="card-price-detail"> <p class="price-color">$${cardDetail.price}</p>
+                    </div>
+                    <p>${cardDetail.category}</p>
+                    <p>${cardDetail.place}</p>
+                    <p class="card-date">${cardDetail.date}</p>
+                
+                    
+                </div>
+            </div>`
 
-
- 
-}
+container.innerHTML = templateCardDetail          

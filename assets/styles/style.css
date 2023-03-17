@@ -32,6 +32,26 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+.card-price-detail{
+    display: flex;
+    justify-content: center;
+
+}
+.card-date{
+    display: flex;
+    justify-content: center;
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 5px;
+}
+.price-color{
+    background-color: gold;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-style: solid;
+    color:crimson;
+
+}
 .banner{
     min-height: 30vh;
     width: 100%;
