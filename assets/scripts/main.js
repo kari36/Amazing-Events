@@ -60,6 +60,35 @@ contenedorCategorias.innerHTML = templateCategorias
 
 imprimirCategorias(arrayCategorias)
 
+////////////////////
+
+/*let inputList = document.querySelectorAll(".check")
+
+
+let select = "pri";
+let key = "";
+
+let inputSearch = document.querySelector("#searchInput")
+inputSearch.addEventListener("key", search)
+
+let data = []
+
+function search(event) {
+    let val = event.target.value
+
+    key = val
+
+    if (select !== "pri") {
+        data = aEvents.filter(eCard => eCard.category.toLowerCase().includes(val.toLowerCase()) && eCard.category === select)
+    } else if (select == "pri" && key == "") {
+        data = aEvents
+    } else {
+        data = aEvents.filter(eCard => eCard.category.toLowerCase().includes(val.toLowerCase()))
+
+    }
+    displayCards(data)
+
+}*/
 
 
 

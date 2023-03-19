@@ -35,4 +35,6 @@ templateCardDetail += `<div class="cardDetail">
                 </div>
             </div>`
 
-container.innerHTML = templateCardDetail          
+container.innerHTML = templateCardDetail        
+
+let cardsFiltered = cards.filter
