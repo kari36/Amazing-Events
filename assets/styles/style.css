@@ -99,3 +99,22 @@ footer{
     float: right;
     
 }
+
+
+
+
+.contenedor-tabla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+table {
+    background-color: #8b18651a;
+    color: white !important;
+    width: 75% !important;
+    vertical-align: middle;
+    text-align: left;
+}

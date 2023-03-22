@@ -20,6 +20,9 @@ fetch(urlApi)
 function past(data, currentDate) {
     return data.filter(event => event.date < currentDate)
 }
+function futures(data, currentDate) {
+    return data.filter(evento => evento.date > currentDate)
+}
 
 //tomando en cuenta eventos pasados.
 
