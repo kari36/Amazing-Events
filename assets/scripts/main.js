@@ -1,13 +1,51 @@
 
 /*let eventos = [];
 let imrpimirHTML = document.getElementById("mostrarCard");*/
-let cards = data.events
+let cards = []
 
 const contenedorTarjetas = document.querySelector("#contenedor-cards")
 
-let targetasGeneradas = crearTarjetas(cards)
+let urlApi = "../assets/scripts/data.json"
+// let urlApi= "https://mindhub-xj03.onrender.com/api/amazing"
 
-contenedorTarjetas.innerHTML = targetasGeneradas
+let categorias = cards.map((evento) => evento.category)
+
+console.log(categorias);
+
+let categoriasNoRepetidas = new Set(categorias)
+console.log(categoriasNoRepetidas)
+let arrayCategorias = [...categoriasNoRepetidas]
+console.log(arrayCategorias);
+
+let contenedorCategorias = document.querySelector(".contenedorCheck")
+
+//Crear cards
+
+
+
+
+
+function datos() {
+    fetch(urlApi)
+        .then(response => response.json())
+        .then(datosEvents => {
+            
+            console.log(datosEvents);
+            cards = datosEvents.events
+            
+
+            console.log(cards)
+            crearTarjetas(cards)
+            console.log(crearTarjetas(cards));
+            // imprimirCategorias(arrayCategorias);
+            // addList(cards);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+}
+
+datos()
 
 function crearTarjetas(cards) {
     let tarjetas = ''
@@ -16,7 +54,7 @@ function crearTarjetas(cards) {
 
 
 
-    for (const card of cards) {
+    for (let card of cards) {
         tarjetas += `<div class="card">
                 <img src="${card.image}" class="card-img-top" alt="img party">
                 <div class="card-body">
@@ -28,37 +66,32 @@ function crearTarjetas(cards) {
                     </div>
                 </div>
             </div>`
+        console.log(tarjetas);
+
         
     }
-    return tarjetas
+    console.log(tarjetas)
+    return contenedorTarjetas.innerHTML = tarjetas
+    
 }
 
 
 /*let imprimirCategorias = */
-let categorias = data.events.map((evento)=> evento.category)
 
-console.log(categorias);
 
-let categoriasNoRepetidas = new Set(categorias)
-console.log(categoriasNoRepetidas)
-let arrayCategorias = [...categoriasNoRepetidas]
-console.log(arrayCategorias);
-
-let contenedorCategorias = document.querySelector(".contenedorCheck")
-
-function imprimirCategorias(arrayCategorias) {
-    let templateCategorias = ''
+// function imprimirCategorias(arrayCategorias) {
+//     let templateCategorias = ''
     
-    arrayCategorias.forEach(categoria => {
-        templateCategorias += `<input class="form-check-input" type="checkbox" value=${categoria} id="flexCheckChecked" >
-            <label class="form-check-label" for="flexCheckChecked">
-                ${categoria}
-            </label>`
-    });
-contenedorCategorias.innerHTML = templateCategorias
-}
+//     arrayCategorias.forEach(categoria => {
+//         templateCategorias += `<input class="form-check-input" type="checkbox" value=${categoria} id="flexCheckChecked" >
+//             <label class="form-check-label" for="flexCheckChecked">
+//                 ${categoria}
+//             </label>`
+//     });
+// contenedorCategorias.innerHTML = templateCategorias
+// }
 
-imprimirCategorias(arrayCategorias)
+//imprimirCategorias(arrayCategorias)
 
 ////////Buscador de eventos
 ////Crear una lista con Elementos(cada elemento es un nombre del evento)
@@ -66,38 +99,38 @@ imprimirCategorias(arrayCategorias)
 let list = document.getElementById("list")
 console.log(list)
 
-let newCards = addList(cards)
+//let newCards = addList(cards)
 
 let search = document.getElementById("search")
 console.log(search);
 
 
-function addList(arrayCards) {
+// function addList(arrayCards) {
 
-    list.innerHTML = ""
+//     list.innerHTML = ""
 
     
 
-    arrayCards.forEach((card) => {
-        let listElement = document.createElement("li")
-        listElement += `<div class="card">
-                <img src="${card.image}" class="card-img-top" alt="img party">
-                <div class="card-body">
-                    <h5 class="card-title">${card.name}</h5>
-                    <p class="card-text">${card.description}
-                    </p>
-                    <div class="card-price"> <p>$${card.price}</p>
-                    <a href="/details.html?id=${card._id}" class="btn btn-primary">See more..</a>
-                    </div>
-                </div>
-            </div>`
+//     arrayCards.forEach((card) => {
+//         let listElement = document.createElement("li")
+//         listElement += `<div class="card">
+//                 <img src="${card.image}" class="card-img-top" alt="img party">
+//                 <div class="card-body">
+//                     <h5 class="card-title">${card.name}</h5>
+//                     <p class="card-text">${card.description}
+//                     </p>
+//                     <div class="card-price"> <p>$${card.price}</p>
+//                     <a href="/details.html?id=${card._id}" class="btn btn-primary">See more..</a>
+//                     </div>
+//                 </div>
+//             </div>`
         
-        listElement.innerHTML = card 
+//         listElement.innerHTML = card 
     
-        list.appendChild(listElement)
-    })
-}
-addList(cards)
+//         list.appendChild(listElement)
+//     })
+// }
+//addList(cards)
 
 ////Cuando se produce un Evento(cambia el input introduciendo texto)
 ////Capturar el texto ingresado
@@ -107,18 +140,18 @@ addList(cards)
 
  
 
-search.addEventListener("change", () => {
-    let cardsFiltered = cards.filter((card) => card.name.toLowerCase().includes(search.value.toLowerCase()))
-    console.log(cardsFiltered)
+// search.addEventListener("change", () => {
+//     let cardsFiltered = cards.filter((card) => card.name.toLowerCase().includes(search.value.toLowerCase()))
+//     console.log(cardsFiltered)
 
 
 
 
-    addList(cardsFiltered)
+//     addList(cardsFiltered)
 
 
 
-})
+// })
 
 
 
