@@ -1,4 +1,8 @@
-const cards = data.events
+let urlApi = "../assets/scripts/data.json"
+// let urlApi= "https://mindhub-xj03.onrender.com/api/amazing"
+
+
+let cards = []
 
 console.log(cards);
 
@@ -13,28 +17,49 @@ console.log(params);
 let id = params.get("id")
 /*console.log(typeof id);*/
 
-let cardDetail = cards.find(event => event._id == id)
-console.log(cardDetail)
+function datos() {
+    fetch(urlApi)
+        .then(response => response.json())
+        .then(datosEvents => {
 
-const container = document.querySelector("#contenedor-cards-details")
+            console.log(datosEvents);
+            cards = datosEvents.events
 
-let templateCardDetail = " "
-templateCardDetail += `<div class="cardDetail">
+            let cardDetail = cards.find(event => event._id == id)
+            console.log(cardDetail)
+
+            console.log(cards)
+            let templateCardDetail = " "
+            templateCardDetail += `<div class="cardDetail">
                 <img src="${cardDetail.image}" class="card-img-top" alt="img party">
                 <div class="card-body">
                     <h5 class="card-title">${cardDetail.name}</h5>
                     <p class="card-text">${cardDetail.description}
                     </p>
-                    <div class="card-price-detail"> <p class="price-color">$${cardDetail.price}</p>
+                    <div class="card-price-detail">
+                    <p class="price-color">$${cardDetail.price}</p>
                     </div>
-                    <p>${cardDetail.category}</p>
-                    <p>${cardDetail.place}</p>
-                    <p class="card-date">${cardDetail.date}</p>
+
+                    <p>Category: ${cardDetail.category}</p>
+                    <p>Place: ${cardDetail.place}</p>
+                    <p class="card-date">Date: ${cardDetail.date}</p>
                 
                     
                 </div>
             </div>`
 
-container.innerHTML = templateCardDetail        
+            container.innerHTML = templateCardDetail
+        })
+        .catch(error => {
+            console.log(error);
+        })
+}
 
-let cardsFiltered = cards.filter
+datos()
+
+
+const container = document.querySelector("#contenedor-cards-details")
+
+        
+
+// let cardsFiltered = cards.filter
