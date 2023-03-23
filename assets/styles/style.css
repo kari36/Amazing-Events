@@ -1,0 +1,120 @@
+
+
+main{
+
+    min-height: 90vh!important;
+}
+#contenedor-cards{
+   min-height: 90vh;
+   justify-content:space-between;
+   align-items: center;
+
+
+
+}
+.card {
+    width: 16rem;
+}
+#contenedor-cards-details{
+    min-height: 90vh;
+    justify-content: center;
+}
+.cardDetail{
+    width: 16rem;
+    background-color: white;
+    padding: 3px;
+    border-radius: 0.375rem;
+
+    
+    
+
+}
+.card-img-top{
+    height: 10rem;
+}
+footer{
+    min-height: 10vh;
+    align-items: center;
+}
+.social{
+    padding: 5px;
+    padding-left: 10px;
+    
+}
+.social img{
+    width: 30px;
+    
+}
+
+
+.card-price{
+    display: flex;
+    justify-content: space-between;
+}
+.card-price-detail{
+    display: flex;
+    justify-content: center;
+
+}
+.card-date{
+    display: flex;
+    justify-content: center;
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 5px;
+}
+.price-color{
+    background-color: gold;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-style: solid;
+    color:crimson;
+
+}
+.banner{
+    min-height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.flecha lat-izq col-4{
+    display: flex;
+    justify-content: center;
+   
+}
+.flecha lat-der col-4{
+    display: flex;
+    justify-content: center;
+}
+.seccion{
+    display: flex;
+    justify-content: center;
+}
+#flecha_izq{
+    width: 100px;
+    float: left;
+}
+#flecha_der{
+    width: 100px;
+    float: right;
+    
+}
+
+
+
+
+.contenedor-tabla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+table {
+    background-color: #8b18651a;
+    color: white !important;
+    width: 75% !important;
+    vertical-align: middle;
+    text-align: left;
+}
